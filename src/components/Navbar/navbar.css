@@ -1,0 +1,222 @@
+/* Reset and base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+}
+
+/* Navbar container */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: #2e63b9; /* Bosch red */
+  color: #fff;
+  position: relative;
+  z-index: 100;
+  user-select: none;
+}
+
+/* Logo */
+.navbar-logo h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  outline-offset: 2px;
+}
+
+/* Navigation links */
+.navbar-links {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar-list {
+  list-style: none;
+  display: flex;
+  gap: 2.5rem;
+}
+
+.navbar-list li a {
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.25rem 0;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar-list li a:hover,
+.navbar-list li a:focus {
+  border-color: #fff;
+  color: #fff;
+  outline: none;
+}
+
+/* Buttons */
+.navbar-buttons {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.btn-login,
+.btn-feedback {
+  padding: 0.5rem 1.2rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease;
+  min-width: 90px;
+}
+
+.btn-login {
+  background-color: #fff;
+  color: #2974eb;
+}
+
+.btn-login:hover,
+.btn-login:focus {
+  background-color: #f0f0f0;
+  outline: none;
+}
+
+.btn-feedback {
+  background-color: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.btn-feedback:hover,
+.btn-feedback:focus {
+  background-color: #fff;
+  color: #2e64ed;
+  outline: none;
+}
+
+/* Hamburger menu icon */
+.menu-icon {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  user-select: none;
+  z-index: 1101;
+}
+
+/* Popup overlay for mobile menu */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(101, 148, 241, 0.95); /* Slightly transparent Bosch red */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 80px; /* below navbar */
+  z-index: 1100;
+}
+
+/* Popup menu container */
+.popup-menu {
+  background-color: #6f87ea; /* Darker red */
+  border-radius: 8px;
+  padding: 2rem 3rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  min-width: 260px;
+  max-width: 90vw;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Popup nav list */
+.popup-menu ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.popup-menu li a,
+.popup-menu li button {
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 0;
+  width: 100%;
+  transition: color 0.3s ease;
+}
+
+.popup-menu li a:hover,
+.popup-menu li a:focus,
+.popup-menu li button:hover,
+.popup-menu li button:focus {
+  color: #ffdede;
+  outline: none;
+}
+
+/* Popup buttons */
+.popup-menu .btn-login {
+  background-color: #fff;
+  color: #2e64ed;
+  border-radius: 4px;
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+}
+
+.popup-menu .btn-login:hover,
+.popup-menu .btn-login:focus {
+  background-color: #eaeaea;
+  outline: none;
+}
+
+.popup-menu .btn-feedback {
+  background-color: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  border-radius: 4px;
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+}
+
+.popup-menu .btn-feedback:hover,
+.popup-menu .btn-feedback:focus {
+  background-color: #fff;
+  color: #2e64ed;
+  outline: none;
+}
+
+/* Responsive */
+
+/* Mobile view */
+@media (max-width: 799px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .navbar-links,
+  .navbar-buttons {
+    display: none;
+  }
+}
