@@ -1,0 +1,142 @@
+/* Reset and base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+}
+
+/* Footer container */
+.footer {
+  background-color: #2e63b9; /* Bosch blue */
+  color: #fff;
+  padding: 2.5rem 1.5rem 1.5rem;
+  user-select: none;
+  font-size: 1rem;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+}
+
+.footer-section {
+  flex: 1 1 250px;
+  min-width: 220px;
+}
+
+.footer-section h3,
+.footer-section h4 {
+  margin-bottom: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.footer-section p {
+  line-height: 1.4;
+  color: #d6dcef;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.7rem;
+}
+
+.footer-section ul li a {
+  color: #d6dcef;
+  transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover,
+.footer-section ul li a:focus {
+  color: #ffdede;
+  outline: none;
+}
+
+/* Social Icons */
+.footer-social {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1.2rem;
+}
+
+.footer-social a {
+  font-size: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  transition: all 0.3s ease;
+  color: #2e63b9;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.footer-social a:hover {
+  transform: scale(1.15);
+  color: #fff;
+}
+
+/* Individual icon colors */
+.footer-social a[aria-label="YouTube"] {
+  background-color: #FF0000;
+}
+
+.footer-social a[aria-label="Facebook"] {
+  background-color: #1877F2;
+}
+
+.footer-social a[aria-label="Instagram"] {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+
+.footer-social a[aria-label="WhatsApp"] {
+  background-color: #25D366;
+}
+
+/* Footer bottom text */
+.footer-bottom {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #a4b0d4;
+  letter-spacing: 0.05em;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .footer-section {
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  .footer-social a {
+    width: 35px;
+    height: 35px;
+    font-size: 1.2rem;
+  }
+}
