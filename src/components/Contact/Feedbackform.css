@@ -1,0 +1,87 @@
+.feedback-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.feedback-container {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.feedback-container h2 {
+  margin-bottom: 1.5rem;
+  color: #2e63b9;
+}
+
+label {
+  font-weight: 600;
+  margin-top: 1rem;
+  display: block;
+  color: #333;
+}
+
+textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 6px;
+  margin-top: 0.5rem;
+  border: 1px solid #ccc;
+  resize: vertical;
+}
+
+.stars {
+  display: flex;
+  margin-top: 0.3rem;
+  margin-bottom: 1rem;
+}
+
+.star {
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #ccc;
+  margin-right: 5px;
+}
+
+.star.filled {
+  color: #f4c430;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="submit"] {
+  background-color: #2e63b9;
+  color: white;
+}
+
+.cancel-btn {
+  background-color: #ccc;
+  color: #000;
+}
+button:hover {
+  opacity: 0.9;
+}
