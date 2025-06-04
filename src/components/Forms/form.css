@@ -1,0 +1,79 @@
+.form-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.form-container {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+form h2 {
+  margin-bottom: 1rem;
+  color: #2e63b9;
+}
+
+form label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 600;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 0.6rem;
+  margin-top: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+form textarea {
+  min-height: 80px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+
+.form-actions button {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.form-actions button[type="submit"] {
+  background-color: #2e63b9;
+  color: #fff;
+}
+
+.form-actions button[type="button"] {
+  background-color: #ddd;
+}
+
+.thank-you {
+  text-align: center;
+}
+
+.thank-you h2 {
+  color: #2e63b9;
+}
+.thank-you p {
+  margin-top: 0.5rem;
+}
