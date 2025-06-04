@@ -1,0 +1,80 @@
+.enquiry-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(46, 99, 185, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1200;
+}
+
+.enquiry-popup {
+  background: white;
+  padding: 2rem 2.5rem;
+  border-radius: 8px;
+  max-width: 400px;
+  width: 90%;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  border: none;
+  background: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #2e63b9;
+}
+
+h2 {
+  margin-bottom: 1rem;
+  color: #2e63b9;
+  text-align: center;
+}
+
+form label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 600;
+  color: #2e63b9;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 0.4rem 0.5rem;
+  margin-top: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.submit-btn {
+  margin-top: 1.5rem;
+  width: 100%;
+  background-color: #2e63b9;
+  color: white;
+  border: none;
+  padding: 0.6rem 0;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.submit-btn:hover,
+.submit-btn:focus {
+  background-color: #244f9e;
+  outline: none;
+}
+form textarea {
+  height: 100px;
+  resize: vertical;
+}

@@ -1,18 +1,21 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './navbar.css';
 
-const Navbar = () => {
+const Navbar = ({ onEnquiryClick }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const popupRef = useRef(null);
 
   const toggleMenu = () => setMenuOpen(prev => !prev);
 
-  // Close menu on outside click or ESC key
   useEffect(() => {
     if (!menuOpen) return;
 
     const handleClickOutside = (event) => {
-      if (popupRef.current && !popupRef.current.contains(event.target) && !event.target.classList.contains('menu-icon')) {
+      if (
+        popupRef.current &&
+        !popupRef.current.contains(event.target) &&
+        !event.target.classList.contains('menu-icon')
+      ) {
         setMenuOpen(false);
       }
     };
@@ -33,7 +36,7 @@ const Navbar = () => {
   return (
     <header className="navbar" role="banner">
       <div className="navbar-logo" tabIndex="0">
-        <h1> Diesel Care</h1>
+        <h1>Diesel Care</h1>
       </div>
 
       <nav className="navbar-links" role="navigation" aria-label="Primary">
@@ -46,13 +49,21 @@ const Navbar = () => {
       </nav>
 
       <div className="navbar-buttons">
-        <button className="btn-login" aria-label="Make an enquiry">Enquiry</button>
-        <button className="btn-feedback" aria-label="Provide feedback">Feedback</button>
+        <button
+          className="btn-login"
+          aria-label="Make an enquiry"
+          onClick={onEnquiryClick}
+        >
+          Enquiry
+        </button>
+        <button className="btn-feedback" aria-label="Provide feedback">
+          Feedback
+        </button>
       </div>
 
       <button
         className="menu-icon"
-        aria-label={menuOpen ? "Close menu" : "Open menu"}
+        aria-label={menuOpen ? 'Close menu' : 'Open menu'}
         aria-expanded={menuOpen}
         aria-controls="mobile-menu"
         onClick={toggleMenu}
@@ -61,15 +72,50 @@ const Navbar = () => {
       </button>
 
       {menuOpen && (
-        <div className="popup-overlay" role="dialog" aria-modal="true" id="mobile-menu">
+        <div
+          className="popup-overlay"
+          role="dialog"
+          aria-modal="true"
+          id="mobile-menu"
+        >
           <nav className="popup-menu" ref={popupRef}>
             <ul>
-              <li><a href="#home" onClick={toggleMenu}>Home</a></li>
-              <li><a href="#services" onClick={toggleMenu}>Services</a></li>
-              <li><a href="#about" onClick={toggleMenu}>About Us</a></li>
-              <li><a href="#contact" onClick={toggleMenu}>Contact</a></li>
-              <li><button className="btn-login" onClick={toggleMenu}>Enquiry</button></li>
-              <li><button className="btn-feedback" onClick={toggleMenu}>Feedback</button></li>
+              <li>
+                <a href="#home" onClick={toggleMenu}>
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href="#services" onClick={toggleMenu}>
+                  Services
+                </a>
+              </li>
+              <li>
+                <a href="#about" onClick={toggleMenu}>
+                  About Us
+                </a>
+              </li>
+              <li>
+                <a href="#contact" onClick={toggleMenu}>
+                  Contact
+                </a>
+              </li>
+              <li>
+                <button
+                  className="btn-login"
+                  onClick={() => {
+                    onEnquiryClick();
+                    setMenuOpen(false);
+                  }}
+                >
+                  Enquiry
+                </button>
+              </li>
+              <li>
+                <button className="btn-feedback" onClick={toggleMenu}>
+                  Feedback
+                </button>
+              </li>
             </ul>
           </nav>
         </div>
